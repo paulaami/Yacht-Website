@@ -268,25 +268,33 @@
             <h2 class="section-heading">Rezerwacja</h2>
 
             <div class="wrapper">
-                <form action="" class="contact__form">
+                <form action="https://formsubmit.co/krugerrangelika@gmail.com" method="POST" class="contact__form">
                     <div class="contact__form-top">
                         
 
                         <label for="name" class="contact__form-label">Imię i nazwisko</label>
-                        <input type="text" class="contact__form-input" id="name">
+                        <input type="text" class="contact__form-input" id="name" name="name" required>
 
                         <label for="email" class="contact__form-label">Adres e-mail:</label>
-                        <input type="text" class="contact__form-input" id="email">
+                        <input type="text" class="contact__form-input" id="email" name="email" required>
+
+                        <select name="yachts" class="contact__form-input">
+                            <option value = "day-select">Wybierz Jacht</option>
+                            <option value = "sunday">Jacht Moonlight</option>
+                            <option value = "monday">Jacht Golden</option>
+                            <option value = "tuesday">Jacht Serena</option>
+                        </select>
 
                         <label for="date" class="contact__form-label">Data:</label>
-                        <input type="date" class="contact__form-input">
+                        <input type="date" class="contact__form-input" name="date">
 
                         <label for="time" class="contact__form-label">Godzina:</label>
-                        <input type="time" class="contact__form-input">
+                        <input type="time" class="contact__form-input" name="time">
+                        <input type="hidden" name="_next" value="https://paulaami.github.io/Yacht-Website/thankyou.html">
                     </div>
 
                     <label for="msg" class="contact__form-label">Wiadomość:</label>
-                    <textarea id="msg" cols="30" rows="10" class="contact__form-textarea"></textarea>
+                    <textarea id="msg" cols="30" rows="10" class="contact__form-textarea" name="message"></textarea>
 
                     <button type="submit" class="contact__form-btn btn-style">Wyślij</button>
                 </form>
