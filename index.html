@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Czartet Jachtów</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/b43780f406.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav__logo">
+            <a href="#"><img src="/img/yacht-logo.png" alt="logo jachtu" /></a>
+        </div>
+        <button class="burger-btn">
+            <div class="burger-btn__box">
+                <div class="burger-btn__bars"></div>
+            </div>
+        </button>
+
+        <div class="nav__items">
+            <a href="#yachts" class="nav__item">Jachty</a>
+            <a href="#offers" class="nav__item">Oferta</a>
+            <a href="#reviews" class="nav__item">Opinie</a>
+            <a href="#reservation" class="nav__item">Rezerwacja</a>
+            <a href="#contact" class="nav__item">Kontakt</a>
+        </div>
+    </nav>
+
+    <header class="header section">
+        <div class="header__wrapper">
+            <div class="header__wrapper-left">
+                <h1 class="header__heading">Luxury Yachts</h1>
+                <p class="header__text">
+                    Czarter luksusowego jachtu pozwoli Ci odkryć wiele miejsc, oferując
+                    jednocześnie wszelkie wygody.
+                </p>
+                <a href="#offers" class="header__btn btn-style">zobacz ofertę</a>
+            </div>
+            <div class="header__wrapper-right"></div>
+        </div>
+        <div class="white-block white-block-left"></div>
+    </header>
+
+    <main class="main">
+        <section class="yachts section-padding section white-section">
+            <div class="wrapper">
+                <h2 class="section-heading">Spełniaj marzenia</h2>
+
+                <div class="yachts__box">
+                    <div class="yachts__box-img">
+                        <img src="/img/yacht2.jpg" alt="zdjęcie jachtu" class="yachts__img" />
+                    </div>
+                    <div class="yachts__box-text">
+                        <h3 class="yachts__title">Wymarzone jachty</h3>
+                        <p class="yachts__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                            ipsum dolor sit, amet consectetur adipisicing elit. Lorem, ipsum
+                            dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="yachts__box">
+                    <div class="yachts__box-img yachts__box-img--right">
+                        <img src="/img/yacht3.jpg" alt="zdjęcie jachtu" class="yachts__img" />
+                    </div>
+                    <div class="yachts__box-text yachts__box-text--right">
+                        <h3 class="yachts__title">Niezapomniane przygody</h3>
+                        <p class="yachts__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                            ipsum dolor sit, amet consectetur adipisicing elit. Lorem, ipsum
+                            dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero-img section">
+            <div class="white-block white-block-left"></div>
+            <div class="white-block white-block-right"></div>
+            <h2 class="hero-img__title">Luksusowe Jachty</h2>
+            <hr>
+            <p class="hero-img__text">Jedyne takie jachty</p>
+            <hr>
+        </section>
+
+        <section class="boats section-padding section white-section" id="boats">
+            <div class="wrapper">
+                <h2 class="section-heading">Polecane jachty</h2>
+
+                <div class="boats__cards">
+
+                    <div class="boats__card" onclick="void(0)">
+                        <div class="boats__card-img boats__card-img--first">
+                            <h3 class="boats__card-img-title">Jacht nr 1</h3>
+                            <p class="boats__card-img-info"><i class="fas fa-angle-double-right"></i> Więcej info</p>
+                        </div>
+                        <div class="boats__card-info">
+                            <h3 class="boats__card-info-title">Jacht nr 1</h3>
+                            <ul class="boats__card-info-list">
+                                <li class="boats__card-info-list-item">Luksusowe wnętrze</li>
+                                <li class="boats__card-info-list-item">Duża powierzchnia</li>
+                                <li class="boats__card-info-list-item">Trzy sypialnie</li>
+                                <li class="boats__card-info-list-item">Jaccuzi</li>
+                                <li class="boats__card-info-list-item">Wygłuszane ściany</li>
+                            </ul>
+                            <button class="boats__card-info-btn btn-style">Wybierz</button>
+                        </div>
+                    </div>
+
+                    <div class="boats__card" onclick="void(0)">
+                        <div class="boats__card-img boats__card-img--second">
+                            <h3 class="boats__card-img-title">Jacht nr 2</h3>
+                            <p class="boats__card-img-info"><i class="fas fa-angle-double-right"></i> Więcej info</p>
+                        </div>
+                        <div class="boats__card-info">
+                            <h3 class="boats__card-info-title">Jacht nr 2</h3>
+                            <ul class="boats__card-info-list">
+                                <li class="boats__card-info-list-item">Luksusowe wnętrze</li>
+                                <li class="boats__card-info-list-item">Duża powierzchnia</li>
+                                <li class="boats__card-info-list-item">Trzy sypialnie</li>
+                                <li class="boats__card-info-list-item">Jaccuzi</li>
+                                <li class="boats__card-info-list-item">Wygłuszane ściany</li>
+                            </ul>
+                            <button class="boats__card-info-btn btn-style">Wybierz</button>
+                        </div>
+                    </div>
+
+                    <div class="boats__card" onclick="void(0)">
+                        <div class="boats__card-img boats__card-img--third">
+                            <h3 class="boats__card-img-title">Jacht nr 3</h3>
+                            <p class="boats__card-img-info"><i class="fas fa-angle-double-right"></i> Więcej info</p>
+                        </div>
+                        <div class="boats__card-info">
+                            <h3 class="boats__card-info-title">Jacht nr 3</h3>
+                            <ul class="boats__card-info-list">
+                                <li class="boats__card-info-list-item">Luksusowe wnętrze</li>
+                                <li class="boats__card-info-list-item">Duża powierzchnia</li>
+                                <li class="boats__card-info-list-item">Trzy sypialnie</li>
+                                <li class="boats__card-info-list-item">Jaccuzi</li>
+                                <li class="boats__card-info-list-item">Wygłuszane ściany</li>
+                            </ul>
+                            <button class="boats__card-info-btn btn-style">Wybierz</button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="offers section-padding section" id="offers">
+
+            <div class="white-block white-block-right"></div>
+            <div class="white-block white-block-left"></div>
+
+
+            <h2 class="section-heading">Oferty</h2>
+            <div class="wrapper">
+
+                <div class="offers__box">
+
+                    <div class="offers__option">
+                        <img src="/img/yach-moonlight.jpg" alt="Jacht moonlight"
+                            class="offers__option-img">
+                        <div class="offers__option-info">
+                            <h3 class="offers__option-heading">Jacht Moonlight</h3>
+                            <p class="offers__option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                                quasi, iste unde repellendus vel aspernatur maxime hic reiciendis tempore consequuntur.
+                            </p>
+                            <p class="offers__option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <button class="offers__option-btn btn-style">Wybierz</button>
+                        </div>
+                    </div>
+                    <div class="offers__option">
+                        <img src="/img/yacht-serena.jpg" alt="Jacht Serena"
+                            class="offers__option-img offers__option-img--right">
+                        <div class="offers__option-info">
+                            <h3 class="offers__option-heading">Jacht Serena</h3>
+                            <p class="offers__option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                                quasi, iste unde repellendus vel aspernatur maxime hic reiciendis tempore consequuntur.
+                            </p>
+                            <p class="offers__option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <button class="offers__option-btn btn-style">Wybierz</button>
+                        </div>
+                    </div>
+                    <div class="offers__option">
+                        <img src="/img/yacht-gold.jpg" alt="Jacht Gold" class="offers__option-img">
+                        <div class="offers__option-info">
+                            <h3 class="offers__option-heading">Jacht Gold</h3>
+                            <p class="offers__option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                                quasi, iste unde repellendus vel aspernatur maxime hic reiciendis tempore consequuntur.
+                            </p>
+                            <p class="offers__option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <button class="offers__option-btn btn-style">Wybierz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews section-padding section white-section" id="reviews">
+            <h2 class="section-heading">Opinie</h2>
+            <div class="wrapper">
+                <div class="reviews__boxes">
+
+
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="/img/man-review.jpg" alt="Jacek Kowalski">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <p class="reviews__box-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A corporis laudantium
+                                voluptatum officia error non explicabo voluptatibus maiores fugit ea.
+                            </p>
+                            <strong>Jacek Kowalski</strong>
+                        </div>
+                    </div>
+
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="/img/woman-review.jpg" alt="Anna Nowakowska">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <p class="reviews__box-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A corporis laudantium
+                                voluptatum officia error non explicabo voluptatibus maiores fugit ea.
+                            </p>
+                            <strong>Anna Nowakowska</strong>
+                        </div>
+                    </div>
+
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="/img/woman2-review.jpg" alt="Jagoda Maj">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <p class="reviews__box-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A corporis laudantium
+                                voluptatum officia error non explicabo voluptatibus maiores fugit ea.
+                            </p>
+                            <strong>Jagoda Maj</strong>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="reservation" class="contact section-padding section white-section">
+            <div class="white-block white-block-left"></div>
+            <div class="white-block white-block-right"></div>
+
+            <h2 class="section-heading">Rezerwacja</h2>
+
+            <div class="wrapper">
+                <form action="" class="contact__form">
+                    <div class="contact__form-top">
+                        
+
+                        <label for="name" class="contact__form-label">Imię i nazwisko</label>
+                        <input type="text" class="contact__form-input" id="name">
+
+                        <label for="email" class="contact__form-label">Adres e-mail:</label>
+                        <input type="text" class="contact__form-input" id="email">
+
+                        <label for="date" class="contact__form-label">Data:</label>
+                        <input type="date" class="contact__form-input">
+
+                        <label for="time" class="contact__form-label">Godzina:</label>
+                        <input type="time" class="contact__form-input">
+                    </div>
+
+                    <label for="msg" class="contact__form-label">Wiadomość:</label>
+                    <textarea id="msg" cols="30" rows="10" class="contact__form-textarea"></textarea>
+
+                    <button type="submit" class="contact__form-btn btn-style">Wyślij</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+
+        <div class="wrapper">
+
+            <div class="footer__boxes">
+                <div class="footer__box">
+                    <h3 class="footer__box-title"><i class="fas fa-anchor">Yacht Co.</i></h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quidem.</p>
+                    <div class="footer__box-social">
+                        <a href="#" class="footer__box-link"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="footer__box-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__box-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="footer__box footer__box-desktop">
+                    <h3 class="footer__box-title">Jachty</h3>
+                    <ul class="footer__box-list">
+                        <li class="footer__box-list-item"><a href="#">Jacht 1</a></li>
+                        <li class="footer__box-list-item"><a href="#">Jacht 2</a></li>
+                        <li class="footer__box-list-item"><a href="#">Jacht 3</a></li>
+                        <li class="footer__box-list-item"><a href="#">Pozostałe jachty</a></li>
+                    </ul>
+                </div>
+                <div class="footer__box footer__box-desktop">
+                    <h3 class="footer__box-title">O firmie</h3>
+                    <ul class="footer__box-list">
+                        <li class="footer__box-list-item"><a href="#">O nas</a></li>
+                        <li class="footer__box-list-item"><a href="#">Zarząd</a></li>
+                        <li class="footer__box-list-item"><a href="#">Kariera</a></li>
+                        <li class="footer__box-list-item"><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+        <p class="footer__bottom-text">&copy; Yacht Design<span class="footer__year"></span></p>
+    </footer>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

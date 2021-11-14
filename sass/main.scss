@@ -1,0 +1,810 @@
+@import "./colors";
+@import "./components";
+@import "./mixins";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.1rem;
+}
+
+/*NAV*/
+
+.nav {
+  &__logo {
+    position: absolute;
+    height: 58px;
+    top: 26px;
+    left: 26px;
+    z-index: 90;
+  }
+  &__items {
+    @include flexRow;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    transform: translateX(100%);
+    background-color: $main-color;
+    z-index: 90;
+    transition: transform 0.4s;
+  }
+
+  &--active {
+    transform: translateX(0);
+  }
+
+  &__item {
+    position: relative;
+    align-self: flex-start;
+    left: calc(50% - 105px);
+    display: block;
+    margin: 0.4em 0;
+    padding: 0.5em 2.6em;
+    color: $pure-white;
+    font-size: 2.5rem;
+    font-family: "Playfair Display";
+    letter-spacing: 0.1rem;
+    width: 210px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 90%;
+      transform: scaleY(0);
+      transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+      background-color: $pure-white;
+    }
+
+    &:hover::before {
+      transform: scaleY(1);
+    }
+  }
+}
+
+.burger-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1em;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  z-index: 100;
+
+  &:focus {
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+  }
+
+  &__box {
+    position: relative;
+    width: 40px;
+    height: 30px;
+  }
+
+  &__bars,
+  &__bars::after,
+  &__bars::before {
+    position: absolute;
+    right: 0;
+    height: 3px;
+    content: "";
+    background-color: $pure-white;
+    transition: width 0.3s;
+  }
+
+  &__bars {
+    width: 100%;
+    &::after {
+      top: 13px;
+      width: 60%;
+    }
+    &::before {
+      top: 27px;
+      width: 30%;
+      transition-delay: 0.1s;
+    }
+  }
+
+  &:hover {
+    .burger-btn__bars::after,
+    .burger-btn__bars::before {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes navItemsAnimation {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.nav-items-animation {
+  animation: navItemsAnimation 1s both;
+}
+
+.black-bars-color,.black-bars-color::after, .black-bars-color::before  {
+  background-color: $main-color;
+}
+
+//HEADER
+
+.header {
+  position: relative;
+  height: calc(95vh);
+  background-image: url(/img/yacht-header-xs.jpg);
+  background-attachment: scroll;
+  background-position-y: 15%;
+
+  &__heading {
+    font-size: 4.8rem;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    margin-bottom: 15px;
+  }
+
+  &__btn {
+    padding: 0.8em 1.7em;
+    color: $pure-white;
+    background: transparent;
+  }
+
+  &__wrapper {
+    display: flex;
+    max-width: 1600px;
+    margin: 0 auto;
+    &-left {
+      @include flexRow;
+
+      flex-direction: column;
+      max-width: 500px;
+      padding: 2em 3em;
+      text-align: center;
+      color: $pure-white;
+      height: 95vh;
+    }
+  }
+}
+
+// MAIN
+// YACHTS
+
+.yachts {
+  &__box {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0;
+  }
+
+  &__img {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  &__title {
+    margin-bottom: 0.5em;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+  }
+}
+
+/*HERO-IMG*/
+
+.hero-img {
+  position: relative;
+  @include heroImages("/img/yacht-bg-xs.jpg");
+  padding: 10em 2em;
+  // background-image: url(/img/yacht-bg-xs.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: $pure-white;
+  overflow: hidden;
+
+  &__title {
+    margin-bottom: 0.5em;
+    font-family: "Playfair Display", serif;
+    font-size: 4.8rem;
+  }
+
+  &__text {
+    padding: 1em 0;
+  }
+}
+
+/*BOATS*/
+
+.boats {
+  &__card {
+    position: relative;
+    margin: 1em 0;
+    height: 450px;
+    color: $pure-white;
+    text-align: center;
+    perspective: 1000px;
+
+    &:hover {
+      .boats__card-img {
+        transform: rotateY(-180deg);
+        opacity: 0;
+      }
+      .boats__card-info {
+        transform: rotateY(0);
+        opacity: 1;
+      }
+    }
+
+    &-img {
+      padding: 2em;
+      height: 100%;
+      border-radius: 8px;
+      background-size: cover;
+      transition: transform 1s, opacity 1s;
+
+      &--first {
+        background-image: $blue-gradient, url("../img/boat-g56fa855f6_1280.jpg");
+      }
+      &--second {
+        background-image: $blue-gradient,
+          url("../img/hawaii-g262c12933_1280.jpg");
+      }
+      &--third {
+        background-image: $blue-gradient,
+          url("../img/water-g995c339ad_1280.jpg");
+      }
+
+      &__title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+      }
+
+      &-info {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        font-size: 1.8rem;
+
+        i {
+          margin-right: 0.3em;
+        }
+      }
+    }
+
+    &-info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: $main-color;
+      border-radius: 8px;
+      opacity: 0;
+      transform: rotateY(180deg);
+      transition: transform 1s, opacity 1s;
+
+      &-title {
+        @include middleStyle;
+
+        top: 1.2em;
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+      }
+
+      &-list {
+        margin: 0 auto;
+        width: 70%;
+        list-style: none;
+
+        &-item {
+          padding: 1em;
+          font-size: 1.4rem;
+          border-bottom: 1px solid $light-white;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+
+      &-btn {
+        @include middleStyle;
+
+        bottom: 2em;
+        padding: 1em;
+        width: 80%;
+        background-color: $gold-color;
+        border: 1px solid $gold-color;
+
+        &::before {
+          background-color: lighten($gold-color, 4%);
+        }
+      }
+    }
+  }
+}
+
+// OFFERS
+.offers {
+  position: relative;
+  background-image: url(/img/bg-yacht-big.jpg);
+  background-size: cover;
+  overflow: hidden;
+
+  .section-heading {
+    color: $pure-white;
+  }
+
+  &__option {
+    margin: 1em 0;
+    box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
+    background-color: $pure-white;
+    overflow: hidden;
+
+    &-img {
+      width: 100%;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &-info {
+      padding: 2em;
+      background-color: $pure-white;
+      z-index: 10;
+    }
+
+    &-heading {
+      margin-bottom: 0.5em;
+      font-size: 2.4rem;
+      font-weight: 300;
+    }
+
+    &-text {
+      margin-bottom: 0.5em;
+      font-size: 1.3rem;
+      color: $dark;
+    }
+
+    &-btn {
+      margin-top: 1em;
+      padding: 0.8em;
+      width: 100%;
+      background-color: $gold-color;
+      border: 1px solid $gold-color;
+
+      &::before {
+        background-color: lighten($gold-color, 6%);
+      }
+    }
+  }
+}
+
+/*REVIEWS*/
+
+@media (max-width: 767px) {
+  .reviews .section-padding {
+    padding: 6em 0;
+  }
+}
+
+.reviews {
+  &__box {
+    position: relative;
+    margin: 2em;
+    padding: 2em;
+    box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(0.95);
+    }
+
+    &-img {
+      position: absolute;
+      top: 8%;
+      left: 75%;
+      transform: translate(-50%, -50%);
+
+      img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+
+    &-quote {
+      margin-bottom: 1em;
+      font-size: 3rem;
+      color: $gold-color;
+    }
+
+    &-text {
+      margin-bottom: 1em;
+      font-size: 1.4rem;
+      color: $dark;
+    }
+  }
+}
+
+/*KONTAKT*/
+
+.contact {
+  position: relative;
+  background-color: $light-white;
+  overflow: hidden;
+
+  .white-block-left {
+    background-color: $main-color;
+  }
+
+  &__form,
+  &__form-top {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-label {
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+  }
+
+  &__form-input {
+    @include contactForm;
+  }
+
+  &__form-textarea {
+    @include contactForm;
+
+    max-width: 100%;
+    width: 100%;
+    min-height: 150px;
+  }
+
+  &__form-btn {
+    align-self: flex-end;
+    padding: 1em;
+    width: 100%;
+    max-width: 300px;
+    background-color: $gold-color;
+    border: 1px solid $gold-color;
+
+    &::before {
+      background-color: lighten($gold-color, 6%);
+    }
+  }
+}
+
+/*FOOTER*/
+
+.footer {
+  color: $pure-white;
+  background-color: $main-color;
+
+  a {
+    color: $pure-white;
+  }
+
+  .wrapper {
+    padding: 6em 2em 2em;
+  }
+
+  &__box {
+    font-size: 1.4rem;
+    &-desktop {
+      display: none;
+    }
+
+    &-title {
+      margin-bottom: 1em;
+      font-size: 3rem;
+      text-transform: uppercase;
+    }
+
+    &-social {
+      margin: 2em 0 1em;
+    }
+
+    &-link {
+      padding: 0 0.3em;
+      font-size: 3.6rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $gold-color;
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__bottom-text {
+    padding: 2em;
+    text-align: center;
+  }
+}
+
+/*MEDIA*/
+
+@media screen and (min-width: 450px) {
+  .header {
+    background-image: url(/img/yacht-header-bg.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .yachts {
+    &__box {
+      flex-direction: row;
+      justify-content: space-between;
+
+      &-text {
+        width: 55%;
+
+        &--right {
+          text-align: right;
+        }
+      }
+
+      &-img {
+        width: 40%;
+
+        &--right {
+          order: 1;
+        }
+      }
+    }
+
+    &__img {
+      margin-bottom: 0;
+      max-height: 300px;
+    }
+  }
+
+  .offers {
+    &__option {
+      display: flex;
+      margin: 2em 0;
+      width: 100%;
+
+      &-img {
+        width: 50%;
+        height: auto;
+
+        &--right {
+          order: 1;
+        }
+      }
+
+      &-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      &-heading {
+        margin-bottom: 0.5em;
+        font-size: 3.6rem;
+      }
+
+      &-btn {
+        padding: 1em;
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav {
+    &__items {
+      width: 50%;
+    }
+  }
+
+  .white-block {
+    height: 45px;
+    width: 45%;
+  }
+
+  .header {
+    &__heading {
+      font-size: 6.2rem;
+      width: 110%;
+      margin-bottom: 20px;
+    }
+    &__text {
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+
+    &__btn {
+      padding: 1.2em 2.3em;
+    }
+  }
+
+  .yachts {
+    &__text {
+      font-size: 1.8rem;
+    }
+  }
+
+  .hero-img {
+    padding: 30rem 2em;
+
+    hr {
+      margin: 0 auto;
+      width: 70%;
+    }
+
+    &__text {
+      font-size: 2.2rem;
+    }
+  }
+
+  .boats {
+    &__cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &__card {
+      margin: 1em;
+      width: 45%;
+    }
+  }
+
+  .footer {
+    &__boxes {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__box {
+      margin: 0 2em;
+      width: 25%;
+
+      &:first-child {
+        width: 50%;
+      }
+
+      &-desktop {
+        display: block;
+      }
+
+      &-title {
+        font-size: 2.4rem;
+      }
+
+      &-list {
+        list-style: none;
+
+        &-item {
+          margin-bottom: 1em;
+
+          a {
+            color: $light-white;
+          }
+        }
+      }
+
+
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nav {
+    &__items {
+      width: 30%;
+    }
+    &__logo {
+      top: 55px;
+      left: 50px;
+    }
+  }
+  .burger-btn {
+    top: 50px;
+    right: 50px;
+  }
+
+  .yachts {
+    &__box {
+      margin: 5em 0;
+
+      &-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-bottom: 2.5em;
+      }
+    }
+
+    &__title {
+      font-size: 3.6rem;
+    }
+  }
+
+  .hero-img {
+    background-image: $blue-gradient, url("../img/yacht-bg-xl.jpg");
+
+    &__title {
+      font-size: 6rem;
+    }
+
+    hr {
+      width: 60%;
+      max-width: 900px;
+    }
+  }
+
+  .offers {
+    &__option {
+      &-img {
+        object-fit: cover;
+        height: 300px;
+      }
+
+      &-text {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .boats {
+    &__card {
+      width: 30%;
+    }
+  }
+}
