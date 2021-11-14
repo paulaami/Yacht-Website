@@ -170,7 +170,7 @@ h2 {
 .header {
   position: relative;
   height: calc(95vh);
-  background-image: url(/img/yacht-header-xs.jpg);
+  background-image: url("../img/yacht-header-xs.jpg");
   background-attachment: scroll;
   background-position-y: 15%;
 
@@ -234,7 +234,7 @@ h2 {
 
 .hero-img {
   position: relative;
-  @include heroImages("/img/yacht-bg-xs.jpg");
+  @include heroImages("../img/yacht-bg-xs.jpg");
   padding: 10em 2em;
   // background-image: url(/img/yacht-bg-xs.jpg);
   background-size: cover;
@@ -281,18 +281,19 @@ h2 {
       height: 100%;
       border-radius: 8px;
       background-size: cover;
+      background-position: center;
       transition: transform 1s, opacity 1s;
 
       &--first {
-        background-image: $blue-gradient, url("../img/boat-g56fa855f6_1280.jpg");
+        background-image: $blue-gradient, url("../img/fav-yacht-1.jpg");
       }
       &--second {
         background-image: $blue-gradient,
-          url("../img/hawaii-g262c12933_1280.jpg");
+          url("../img/fav-yacht-2.jpg");
       }
       &--third {
         background-image: $blue-gradient,
-          url("../img/water-g995c339ad_1280.jpg");
+          url("../img/fav-yacht-3.jpg");
       }
 
       &__title {
@@ -371,7 +372,7 @@ h2 {
 // OFFERS
 .offers {
   position: relative;
-  background-image: url(/img/bg-yacht-big.jpg);
+  background-image: url("../img/bg-yacht-big.jpg");
   background-size: cover;
   overflow: hidden;
 
@@ -577,7 +578,7 @@ h2 {
 
 @media screen and (min-width: 450px) {
   .header {
-    background-image: url(/img/yacht-header-bg.jpg);
+    background-image: url("../img/yacht-header-bg.jpg");
     background-position: center;
     background-size: cover;
   }
